@@ -1,0 +1,22 @@
+{
+  "name": "gerador-tarefas",
+  "version": "1.0.0",
+  "description": "Um gerador de tarefas em node.js",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Christian-M-Silva/gerador-tarefas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Christian-M-Silva/gerador-tarefas/issues"
+  },
+  "homepage": "https://github.com/Christian-M-Silva/gerador-tarefas#readme"
+}
