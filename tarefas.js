@@ -28,9 +28,33 @@ export async function listTask() {
 
     await fs.access(path).then(async () => {
         const json = await convertFileJsonToJson()
-        json.map((data =>{
+        json.map((data => {
             console.log(data.id + ' - ' + data.status + ' - ' + data.titleTaks)
         }))
+    }).catch((err) => {
+        console.log('Arquivo não encontrado!')
+        throw err
+    });
+}
+
+export async function deleteTask(id) {
+    await fs.access(path).then(async () => {
+        const json = await convertFileJsonToJson()
+        const index = json.findIndex(item => item.id === id)
+        if (index === -1) {
+            console.log('Atividade não encontrada, as atividades existentes são:')
+        } else {
+            json.splice(index, 1)
+
+            const jsonString = JSON.stringify(json)
+            fs.writeFile(path, jsonString, 'utf-8').then(() => {
+                console.log('Lista atualizada:')
+            })
+                .catch((err) => { throw err });
+        }
+
+        listTask()
+
     }).catch((err) => {
         console.log('Arquivo não encontrado!')
         throw err
