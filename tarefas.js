@@ -24,6 +24,19 @@ export async function addTask(titleTaks) {
     fs.writeFile(path, jsonString, 'utf-8').then(() => console.log('Tarefa adicionada com sucesso!!!')).catch((err) => { throw err });
 }
 
+export async function listTask() {
+
+    await fs.access(path).then(async () => {
+        const json = await convertFileJsonToJson()
+        json.map((data =>{
+            console.log(data.id + ' - ' + data.status + ' - ' + data.titleTaks)
+        }))
+    }).catch((err) => {
+        console.log('Arquivo não encontrado!')
+        throw err
+    });
+}
+
 async function convertFileJsonToJson() {
     const json = await fs.readFile(path, 'utf8').then((result) => JSON.parse(result)).catch((err) => { throw err });
 

@@ -1,3 +1,3 @@
-import { addTask } from "./tarefas.js";
+import { addTask, listTask } from "./tarefas.js";
 
-addTask('Testesss')
+listTask()
