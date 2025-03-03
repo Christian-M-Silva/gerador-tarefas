@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Christian-M-Silva/gerador-tarefas/issues"
   },
-  "homepage": "https://github.com/Christian-M-Silva/gerador-tarefas#readme"
+  "homepage": "https://github.com/Christian-M-Silva/gerador-tarefas#readme",
+  "dependencies": {
+    "uuid": "^11.1.0"
+  }
 }
